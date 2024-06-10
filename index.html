@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejador de Estudos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="mb-4">
+            <h1 class="text-center">Planejador de Estudos</h1>
+        </header>
+        
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="calendario-tab" data-toggle="tab" href="#calendario" role="tab" aria-controls="calendario" aria-selected="true">Calendário de Estudos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="lembretes-tab" data-toggle="tab" href="#lembretes" role="tab" aria-controls="lembretes" aria-selected="false">Lembretes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="tarefas-tab" data-toggle="tab" href="#tarefas" role="tab" aria-controls="tarefas" aria-selected="false">Lista de Tarefas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="anotacoes-tab" data-toggle="tab" href="#anotacoes" role="tab" aria-controls="anotacoes" aria-selected="false">Anotações</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="calendario" role="tabpanel" aria-labelledby="calendario-tab">
+                <h2 class="mt-3">Calendário de Estudos</h2>
+                <p>Integre seu calendário aqui.</p>
+            </div>
+            <div class="tab-pane fade" id="lembretes" role="tabpanel" aria-labelledby="lembretes-tab">
+                <h2 class="mt-3">Lembretes</h2>
+                <ul id="lista-lembretes" class="list-group"></ul>
+                <input type="text" id="novo-lembrete" placeholder="Digite o lembrete" class="form-control mb-2">
+                <input type="date" id="data-lembrete" class="form-control mb-2">
+                <button onclick="adicionarLembrete()" class="btn btn-primary">Adicionar Lembrete</button>
+                <button onclick="limparLembretes()" class="btn btn-danger mt-2">Limpar Lembretes</button>
+            </div>
+            <div class="tab-pane fade" id="tarefas" role="tabpanel" aria-labelledby="tarefas-tab">
+                <h2 class="mt-3">Lista de Tarefas</h2>
+                <ul id="lista-tarefas" class="list-group"></ul>
+                <input type="text" id="nova-tarefa" placeholder="Digite a tarefa" class="form-control mb-2">
+                <input type="date" id="data-tarefa" class="form-control mb-2">
+                <button onclick="adicionarTarefa()" class="btn btn-primary">Adicionar Tarefa</button>
+                <button onclick="limparTarefas()" class="btn btn-danger mt-2">Limpar Tarefas</button>
+            </div>
+            <div class="tab-pane fade" id="anotacoes" role="tabpanel" aria-labelledby="anotacoes-tab">
+                <h2 class="mt-3">Anotações</h2>
+                <textarea class="note-area form-control" id="anotacoes-area" placeholder="Digite suas anotações aqui..." onblur="salvarAnotacoes()"></textarea>
+                <button onclick="limparAnotacoes()" class="btn btn-danger mt-2">Limpar Anotações</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
